@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/fitnesshome"
+        android:title="Home"
+        android:orderInCategory="10"
+        app:showAsAction="never"/>
+    <item android:id="@+id/fitnessworkout"
+        android:title="Fitness Workout"
+        android:orderInCategory="15"
+        app:showAsAction="never"/>
+    <item android:id="@+id/fitnesslog"
+        android:title="Fitness Logger"
+        android:orderInCategory="20"
+        app:showAsAction="never"/>
+    <item android:id="@+id/fitnessexit"
+        android:title="Exit"
+        android:orderInCategory="25"
+        app:showAsAction="never"/>
+</menu>

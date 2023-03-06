@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FitnessApp</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="yesbutt">Yes</string>
+    <string name="nobutt">No</string>
+    <string name="therowmsg">The selected row is: </string>
+    <string name="doyoutitle">Do you want to remove this row?</string>
+    <string name="typehere">Type here</string>
+    <string name="addbutt">Add</string>
+    <string name="urgent">Urgent</string>
+</resources>
