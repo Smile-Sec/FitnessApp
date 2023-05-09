@@ -11,10 +11,9 @@ import androidx.annotation.Nullable;
 public class SQLdb extends SQLiteOpenHelper {
     protected final static String DATABASE_NAME = "fitnesslocaldb";
     protected final static int VERSION_NUM = 1;
-    public final static String TABLE_NAME = "LabFive";
-    public final static String COL_BOOL = "BOOL";
+    public final static String TABLE_NAME = "Tracker";
     public final static String COL_NAME = "NAME";
-    public final static String COL_ID = "_id";
+    public final static String COL_ID = "ID";
 
     public SQLdb(Context contxt) {
         super(contxt, DATABASE_NAME, null, VERSION_NUM);
@@ -24,22 +23,19 @@ public class SQLdb extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + COL_NAME + " text,"
-                + COL_BOOL  + " INTEGER);");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COL_NAME + " text);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-
         onCreate(db);
     }
 
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-
         onCreate(db);
     }
 }

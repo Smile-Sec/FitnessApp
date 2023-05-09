@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     Toolbar tool;
     DrawerLayout draw;
+    FragmentManager fragmentMan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,45 +34,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this);
+
+        fragmentMan = getSupportFragmentManager();
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        String message = null;
         switch(item.getItemId()) {
             case R.id.fitnesshome:
-                message = "You are already home silly!";
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                fragmentMan.beginTransaction().replace(R.id.fcv, ReminderFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.fitnessworkout:
-                Intent nextPages = new Intent(MainActivity.this, Workout.class);
-                startActivity(nextPages);
+                fragmentMan.beginTransaction().replace(R.id.fcv, WorkoutFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.fitnesslog:
-                Intent nextPage = new Intent(MainActivity.this, logTracker.class);
-                startActivity(nextPage);
+                fragmentMan.beginTransaction().replace(R.id.fcv, TrackerLogFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.fitnessexit:
                 finishAffinity();
                 break;
         }
-
         draw.closeDrawer(GravityCompat.START);
-
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String message = null;
         switch(item.getItemId())
         {
             case R.id.item1:
-                message = "This button eventually opens settings";
+                fragmentMan.beginTransaction().replace(R.id.fcv, SettingsFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
                 break;
         }
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         return true;
     }
 
