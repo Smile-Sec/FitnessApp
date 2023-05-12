@@ -1,14 +1,347 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ReminderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+
+        <CheckBox
+            android:id="@+id/fruitACheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fruitBCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/veggieTextView" />
+
+        <CheckBox
+            android:id="@+id/fruitBCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/fruitACheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/mealTextView" />
+
+        <CheckBox
+            android:id="@+id/fruitCCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fruitBCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/fruitACheckBox" />
+
+        <CheckBox
+            android:id="@+id/vegACheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/vegBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/fruitACheckBox" />
+
+        <CheckBox
+            android:id="@+id/vegBCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="@+id/fruitBCheckBox"
+            app:layout_constraintTop_toTopOf="@+id/fruitBCheckBox" />
+
+        <CheckBox
+            android:id="@+id/vegCCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/vegBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/fruitCCheckBox" />
+
+        <CheckBox
+            android:id="@+id/vegDCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/vegCCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/fruitBCheckBox" />
+
+        <CheckBox
+            android:id="@+id/proACheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/proBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/vegACheckBox" />
+
+        <CheckBox
+            android:id="@+id/proBCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="@+id/vegBCheckBox"
+            app:layout_constraintTop_toTopOf="@+id/vegBCheckBox" />
+
+        <CheckBox
+            android:id="@+id/proCCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/proBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/vegCCheckBox" />
+
+        <CheckBox
+            android:id="@+id/grainACheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/grainBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/proACheckBox" />
+
+        <CheckBox
+            android:id="@+id/grainBCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="@+id/proBCheckBox"
+            app:layout_constraintTop_toTopOf="@+id/proBCheckBox" />
+
+        <CheckBox
+            android:id="@+id/grainCCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/grainBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/proCCheckBox" />
+
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Nutrition Checklist"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mealTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="1dp"
+            android:text="Food Servings:"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/fruitACheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+
+        <TextView
+            android:id="@+id/fruitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="Fruit:"
+            app:layout_constraintStart_toStartOf="@+id/mealTextView"
+            app:layout_constraintTop_toBottomOf="@+id/mealTextView" />
+
+        <TextView
+            android:id="@+id/veggieTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginBottom="6dp"
+            android:text="Vegetables:"
+            app:layout_constraintBottom_toTopOf="@+id/proACheckBox"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/proteinTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="Protein:"
+            app:layout_constraintStart_toStartOf="@+id/veggieTextView"
+            app:layout_constraintTop_toBottomOf="@+id/veggieTextView" />
+
+        <TextView
+            android:id="@+id/grainTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="Grains:"
+            app:layout_constraintStart_toStartOf="@+id/proteinTextView"
+            app:layout_constraintTop_toBottomOf="@+id/proteinTextView" />
+
+        <TextView
+            android:id="@+id/fatsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="22dp"
+            android:text="Fats:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grainTextView" />
+
+        <TextView
+            android:id="@+id/wataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="24dp"
+            android:text="Water:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterTextView" />
+
+        <TextView
+            android:id="@+id/waterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="44dp"
+            android:text="Water Servings:"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fatsACheckBox" />
+
+        <CheckBox
+            android:id="@+id/waterACheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/waterBCheckBox"
+            app:layout_constraintEnd_toEndOf="@+id/waterTextView" />
+
+        <CheckBox
+            android:id="@+id/waterBCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/waterTextView"
+            app:layout_constraintStart_toEndOf="@+id/waterTextView"
+            app:layout_constraintTop_toBottomOf="@+id/waterTextView" />
+
+        <CheckBox
+            android:id="@+id/waterCCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/waterBCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/waterTextView" />
+
+        <CheckBox
+            android:id="@+id/waterDCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/waterECheckBox"
+            app:layout_constraintEnd_toStartOf="@+id/totalWaterTextView" />
+
+        <CheckBox
+            android:id="@+id/waterECheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/waterFCheckBox"
+            app:layout_constraintEnd_toStartOf="@+id/totalWaterTextView"
+            app:layout_constraintStart_toStartOf="@+id/totalWaterTextView" />
+
+        <CheckBox
+            android:id="@+id/waterFCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/waterGCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/totalWaterTextView" />
+
+        <CheckBox
+            android:id="@+id/waterGCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@+id/waterECheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/totalWaterTextView" />
+
+        <CheckBox
+            android:id="@+id/fatsACheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fatsBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/grainACheckBox" />
+
+        <CheckBox
+            android:id="@+id/fatsBCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="@+id/grainBCheckBox"
+            app:layout_constraintTop_toTopOf="@+id/grainBCheckBox" />
+
+        <CheckBox
+            android:id="@+id/fatsCCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fatsBCheckBox"
+            app:layout_constraintStart_toStartOf="@+id/grainCCheckBox" />
+
+        <CheckBox
+            android:id="@+id/waterHCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/waterGCheckBox"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/totalFoodTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="2dp"
+            android:text="Total Servings:"
+            app:layout_constraintEnd_toStartOf="@+id/servingFoodTextView"
+            app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+
+        <TextView
+            android:id="@+id/servingFoodTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="41dp"
+            android:text="0"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/totalFoodTextView"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/totalWaterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="10dp"
+            android:text="Total Servings:"
+            app:layout_constraintBottom_toTopOf="@+id/waterCCheckBox"
+            app:layout_constraintEnd_toStartOf="@+id/servingWaterTextView" />
+
+        <TextView
+            android:id="@+id/servingWaterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:text="0"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/totalWaterTextView"
+            app:layout_constraintEnd_toEndOf="@+id/waterHCheckBox" />
+
+        <TextView
+            android:id="@+id/msgTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="119dp"
+            android:layout_marginBottom="118dp"
+            android:text="Message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterACheckBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
